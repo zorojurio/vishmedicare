@@ -1,0 +1,77 @@
+
+
+.video-background-holder video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: auto;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@media only screen and (min-width: 766px) {
+  .video-background-holder {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    height: calc(100vh - 65px);
+    min-height: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+  .video-background-content {
+    position: relative;
+    z-index: 2;
+    color: #115273;
+    visibility: visible;
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .video-background-holder {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    min-height: auto;
+  
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .video-background-content {
+    position: relative;
+    z-index: 2;
+    color: #115273;
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 768) {
+  .video-background-holder {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    height: calc(100vh - 100px);
+    min-height: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.video-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+

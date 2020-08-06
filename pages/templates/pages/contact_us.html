@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_title %}
+About Us | VishMedi.com
+{% endblock head_title %}
+
+{% block meta_description %}
+We’re a company that focusses on manufacturing and distributing high-quality medical goods to the
+market to enrich the quality of the health sector.
+{% endblock %}
+
+{% block keywords %}
+Vishmedi, Vish Medi Care
+{% endblock %}
+
+
+{% block extrastyle %}
+<meta name="robots" content="all">
+<link rel="stylesheet" href="{% static 'css/Contact-Form-v2-Modal--Full-with-Google-Map.css' %}">   
+
+{% endblock extrastyle %}
+
+{% block extrahead %}
+<script src="{% static 'js/Contact-Form-v2-Modal--Full-with-Google-Map.js' %}"></script>
+{% endblock extrahead %}
+
+
+{% block fb_meta %}
+<meta property="fb:app_id" content="2845903108859375" />
+<meta property="og:title" content="VishMedi Care">
+<meta property="og:type" content="website" />
+<meta property="og:description" content="We’re a company that focusses on manufacturing and distributing high-quality medical goods to the market to enrich the quality of the health sector." />
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+<meta property="og:image" content="http://{{request.get_host}}{% static 'img/logo.png' %}">
+<meta property="og:image:secure_url" content="https://{{request.get_host}}{% static 'img/logo.png' %}">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="VishMedi Care" />
+{% endblock %}
+
+
+{% block content %}
+<div>
+    <div class="container">
+        <h1>Contact Information</h1>
+        <hr>
+        <form id="" action="" method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col-12 col-md-6" id="message">
+                    <h2 class="h4"><i class="fa fa-envelope"></i> Contact Us<small><small class="required-input">&nbsp;(*required)</small></small>
+                    </h2>
+                    <div class="form-group"><label for="id_name">Name</label><span class="required-input">*</span>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user-o"></i>
+                                </span>
+                            </div>
+
+                            {{form.name}}
+                        </div>
+                    </div>
+                    <div class="form-group"><label for="from-email">Email</label><span class="required-input">*</span>
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-envelope-o"></i></span></div>
+                            {{form.email}}    
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 ">
+                            <div class="form-group"><label for="from-phone">Phone</label><span class="required-input">*</span>
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-phone"></i></span></div>
+                                    {{form.phone}}    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group"><label for="from-comments">Comments</label>
+                        {{form.message}}
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col"><button class="btn btn-primary btn-block" type="reset"><i class="fa fa-undo"></i> Reset</button></div>
+                            <div class="col"><button class="btn btn-primary btn-block" type="submit">Submit <i class="fa fa-chevron-circle-right"></i></button></div>
+                        </div>
+                    </div>
+                    <hr class="d-flex d-md-none">
+                </div>
+                <div class="col-12 col-md-6">
+                    <h2 class="h4"><i class="fa fa-location-arrow"></i> Locate Us</h2>
+                    <div class="form-row">
+                        <div class="col-12">
+                            <div class="static-map col-12 mx-auto">
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7922.368941348242!2d79.949791!3d6.868486!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae250ee317f72df%3A0x5d3e64fc4f0a3f0b!2sKalalgoda%20Rd%2C%2010230!5e0!3m2!1sen!2slk!4v1596363841751!5m2!1sen!2slk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+                        </div>
+                    </div>
+                        <div class="col-sm-6 col-md-12 col-lg-6">
+                            <h2 class="h4"><i class="fa fa-user"></i> Our Info</h2>
+                            <div><span><strong>VishMed</strong></span></div>
+                            <div><span> <a href="mailto:Shirantha.vishmed@gmail.com">
+                                Shirantha.vishmed@gmail.com
+                            </a> </span></div>
+
+                            <hr class="d-sm-none d-md-block d-lg-none">
+                        </div>
+                        <div class="col-sm-6 col-md-12 col-lg-6">
+                            <h2 class="h4"><i class="fa fa-location-arrow"></i> Our Address</h2>
+                            <div><span><strong>VishMed</strong></span></div>
+                            <div><span>86/6, Meemanagoda Rd</span></div>
+                            <div><span>Kalalgoda, Pannipitiya </span></div>
+                            <div> <a href="tel:+94-775-794-833">+94-775-794-833</a> </div>
+                            <hr class="d-sm-none">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+{% endblock content %}
+    
+

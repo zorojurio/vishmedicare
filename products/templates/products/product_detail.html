@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_title %}
+{{product.title}} | Edarn.com
+{% endblock head_title %}
+
+{% block meta_description %}
+{{product.meta_description}}
+{% endblock %}
+
+{% block keywords %}
+{{product.keywords}}
+{% endblock %}
+
+{% block extrastyle %}
+<meta name="robots" content="all">
+<link rel="stylesheet" href="{% static 'css/Article-Clean.css' %}">
+{% endblock extrastyle %}
+
+{% block extrahead %}
+
+{% endblock extrahead %}
+
+{% block content %}
+<div class="article-clean mt-lg-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2 mt-lg-2">
+                <div class="intro">
+                    <h1 class="text-center">{{product.title}}</h1>
+
+                    <img class="img-fluid" src="{{product.get_product_image}}">
+                </div>
+                <div class="text">
+                    <p class="text-justify">{{product.description|safe}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+    

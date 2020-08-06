@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="VishMedi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% include 'base/gtm.html' %}
+    <!-- SEO Meta Tags-->
+
+     <link rel="home" href="https://vishmedi.com/" />
+    <title>
+        {% block head_title %}
+        
+        {% endblock %}
+    </title>
+
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <link href="https://eldarn.com{{request.path}}" rel="canonical">
+    <meta name="keywords" content="{% block keywords %} {% endblock %}">
+    {% block fb_meta %}{% endblock %}
+
+    {% block extrastyle %}
+    
+    {% endblock extrastyle %}
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">    
+    {% include 'base/css.html' %}
+
+</head>
+<body>
+    {% include 'base/gtml_bottom.html' %}
+    {% include 'base/nav_bar.html' %}
+    {% include 'base/messages.html' %}
+    {% block content %}
+        
+    {% endblock content %}
+    {% include 'base/footer.html' %}
+
+    <!-- extra scripts -->
+    {% include 'base/js.html' %}   
+    {% block extrahead %}{% endblock extrahead %} 
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+.navbar-custom{
+    background-color: #115175 !important;
+}
+
+.product-section a{
+    color: #105275;
+}
+
+.product-section a:hover{
+    text-decoration: none;
+}

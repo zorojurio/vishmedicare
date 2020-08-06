@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_title %}
+About Us | VishMedi.com
+{% endblock head_title %}
+
+{% block meta_description %}
+We’re a company that focusses on manufacturing and distributing high-quality medical goods to the
+market to enrich the quality of the health sector.
+{% endblock %}
+
+{% block keywords %}
+Vishmedi, Vish Medi Care
+{% endblock %}
+
+
+{% block extrastyle %}
+<meta name="robots" content="all">
+<link rel="stylesheet" href="{% static 'css/Team-Boxed.css' %}">
+<link rel="stylesheet" href="{% static 'css/Bold-BS4-Jumbotron-with-Particles-js.css' %}">    
+
+{% endblock extrastyle %}
+
+{% block extrahead %}
+<script src="{% static 'js/Bold-BS4-Jumbotron-with-Particles-js.js' %}"></script>
+{% endblock extrahead %}
+
+
+{% block fb_meta %}
+<meta property="fb:app_id" content="2845903108859375" />
+<meta property="og:title" content="VishMedi Care">
+<meta property="og:type" content="website" />
+<meta property="og:description" content="We’re a company that focusses on manufacturing and distributing high-quality medical goods to the market to enrich the quality of the health sector." />
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+<meta property="og:image" content="http://{{request.get_host}}{% static 'img/logo.png' %}">
+<meta property="og:image:secure_url" content="https://{{request.get_host}}{% static 'img/logo.png' %}">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="VishMedi Care" />
+{% endblock %}
+
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid jumbotron-main">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+    <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+        <div id="particles-js">
+            <canvas class="particles-js-canvas-el" width="1409" height="319" style="width: 100%; height: 100%;"></canvas>
+        </div>
+        <div class="container center-vertically-holder" style="margin-top:-20px;">
+            <div class="row center-vertically">
+                <div class="col-md-8 offset-sm-0 offset-md-2 text-center" style="margin-top:100px;margin-bottom:100px;">
+                    <h1>Who are We? <br><br></h1>
+                    <hr style="border-top:1px;color:rgba(255,255,255,0.9);width:60%;margin:0px;margin-top:-50px;margin-bottom:10px;margin-left:20%;">
+                    <p>We’re a company that focus on manufacturing and distributing high-quality medical goods to the market to enrich the quality of the health sector. The goods are manufactured on our own plants following the standard procedures and we’re 100% made in Sri Lanka. Currently our products are trusted by many distributors and hospitals island wide and our key focus is to establish a ‘Made-in-Sri Lanka’ brand in the global market. .</p>
+                    <p><a class="btn btn-primary" role="button" href="#">Home</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="team-boxed">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Team </h2>
+                <p class="text-center">Our team is highly specialized in researching new products in medical device industry in order to enhance quality and reduce cost of production.  We’re continuously maintaining our very own standards to give you the best both products and services. </p>
+            </div>
+            <div class="row people">
+                <div class="col-md-6 item">
+                    <div class="box">
+                        
+                        <h3 class="name">Vision</h3>
+                        <p class="title">of the company</p>
+                        <p class="description">To provide quality solutions to the medical industry at a reasonable cost by investing on continuous researches which enhance quality of life.  </p>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 item">
+                    <div class="box">
+                        <h3 class="name">Mission</h3>
+                        <p class="title">of the company</p>
+                        <p class="description">To be a well establish medical brand in the global context by providing the best equipment to customers. 
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+    

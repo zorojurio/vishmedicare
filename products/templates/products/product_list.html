@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head_title %}
+Medical Store | VishMedi.com
+{% endblock head_title %}
+
+{% block meta_description %}
+We’re a company that focusses on manufacturing and distributing high-quality medical goods to the
+market to enrich the quality of the health sector.
+{% endblock %}
+
+{% block keywords %}
+Vishmedi, Vish Medi Care
+{% endblock %}
+
+{% block extra_head %}
+<meta name="robots" content="all">
+{% endblock %}
+
+{% block fb_meta %}
+<meta property="fb:app_id" content="2845903108859375" />
+<meta property="og:title" content="VishMedi Care">
+<meta property="og:type" content="website" />
+<meta property="og:description" content="We’re a company that focusses on manufacturing and distributing high-quality medical goods to the market to enrich the quality of the health sector." />
+<meta property="og:url" content="{{request.build_absolute_uri}}" />
+<meta property="og:image" content="http://{{request.get_host}}{% static 'img/logo.png' %}">
+<meta property="og:image:secure_url" content="https://{{request.get_host}}{% static 'img/logo.png' %}">
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="VishMedi Care" />
+{% endblock %}
+
+
+{% block content %}
+<div class="video-container mt-5 mt-lg-1"><video src="{% static 'video/vishmend_video.mp4' %}" preload="metadata" muted="" loop="" autoplay="" width="100%" height="auto"></video></div>
+
+
+{% for product in products %}
+<section>
+    <div class="container product-section">
+        <div class="row align-items-center">
+            <div class="col-lg-6 
+            {% if forloop.counter|divisibleby:2 %}
+            order-lg-1
+            {% else %}
+            order-lg-2
+            {% endif %}
+                ">
+                <div class="p-5">
+                    <a href="{{product.get_absolute_url}}">
+                        <img class="rounded img-fluid" src="{{product.get_product_image}}">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 
+            {% if forloop.counter|divisibleby:2 %}
+            order-lg-2
+            {% else %}
+            order-lg-1
+            {% endif %}
+            ">
+                <div class="p-5">
+                    <a href="{{product.get_absolute_url}}">
+                        <h2 class="display-4">{{product.title}}</h2>
+                    </a>
+                    <p>
+                        {{product.description|safe}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+    
+{% endblock content %}
+    
