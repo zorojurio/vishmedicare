@@ -1,4 +1,8 @@
 {% load static %}
+
+{% url 'pages:about-us' as about_us_url%}
+{% url 'pages:contact-us' as contact_us_url %}
+
 <footer>
     <div class="row">
         <div class="col-sm-6 col-md-4 footer-navigation">
@@ -6,7 +10,12 @@
                 <img src="{% static 'img/logo.png' %}" alt="Vishmed Company Logo" style="width: 100px; height: 100px;">
                 <a href="#">Vish<span>Med</span></a>
             </h3>
-            <p class="links"><a href="#">Home</a><strong>&nbsp; · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a href="#">Contact</a><strong> · </strong></p>
+            <p class="links">
+                <a href="{% url 'products:home' %}">Home</a>
+                <strong>&nbsp; · </strong>
+                <a href="#">Pricing</a><strong> · </strong>
+                <a href="{{about_us_url}}">About</a><strong> · </strong>
+                <a href="{{contact_us_url}}">Contact</a><strong> · </strong></p>
             <p class="company-name">VishMed © 2020</p>
             <p class="company-name">Project By: 
                 <a href="https://eldarn.com/">DonDevs Developers</a>
