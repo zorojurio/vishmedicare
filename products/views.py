@@ -8,7 +8,7 @@ class ProductListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        products = Product.objects.all().order_by('timestamp')[:3]
+        products = Product.objects.all().order_by('timestamp')
         context['products'] = products
         return context
 
